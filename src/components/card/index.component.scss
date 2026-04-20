@@ -1,6 +1,7 @@
 @media (hover: hover) and (pointer: fine) {
   .example2,
-  .original2 {
+  .original2,
+  .modern2 {
     &:hover {
       border: 1px solid #78b7fa;
       transform: translateY(-3px);
@@ -360,5 +361,53 @@
   .name {
     margin-top: 2px;
     text-align: center;
+  }
+}
+
+.modern2 {
+  background: linear-gradient(145deg, #ffffff 0%, #f8fafc 100%);
+  padding: 16px;
+  border-radius: 12px;
+  cursor: pointer;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -2px rgba(0, 0, 0, 0.1);
+  border: 1px solid rgba(229, 231, 235, 0.8);
+  transition: all 0.2s ease-out;
+  color: #000;
+  display: block;
+  position: relative;
+  overflow: hidden;
+  &:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -4px rgba(0, 0, 0, 0.1);
+    border-color: rgba(59, 130, 246, 0.5);
+    .title {
+      color: #2563eb;
+    }
+  }
+  .title {
+    width: 100%;
+    font-weight: 600;
+    font-size: 15px;
+    line-height: 1.4;
+    color: #1f2937;
+    margin-bottom: 8px;
+  }
+  .wrapper {
+    display: flex;
+    align-items: flex-start;
+  }
+  .right-box {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    width: 0;
+    margin-left: 12px;
+  }
+  .desc {
+    width: 100%;
+    font-size: 13px;
+    color: #6b7280;
+    margin: 0;
+    line-height: 1.5;
   }
 }

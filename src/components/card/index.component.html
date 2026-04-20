@@ -184,6 +184,40 @@
         </div>
       </div>
 
+      <!-- modern style -->
+      <div
+        class="card-container modern2 ellipsis dark-bg-gary dark-white dark-shadow"
+        *ngSwitchCase="'modern'"
+        (click)="jumpService.goUrl($event, dataSource.url)"
+      >
+        <div
+          class="mb-2"
+          *ngIf="commonService.searchKeyword && dataSource.breadcrumb"
+        >
+          <app-breadcrumb [data]="dataSource" />
+        </div>
+        <div class="wrapper ellipsis">
+          <app-logo
+            [src]="dataSource.icon"
+            [name]="dataSource.name"
+            [size]="40"
+          />
+          <div
+            class="right-box ellipsis"
+            [title]="dataSource.__desc__ || dataSource.desc"
+          >
+            <div
+              class="title ellipsis dark-white"
+              [innerHTML]="dataSource.name"
+            ></div>
+            <div
+              class="desc dark-text ellipsis2"
+              [innerHTML]="dataSource.desc"
+            ></div>
+          </div>
+        </div>
+      </div>
+
       <!-- retro style -->
       <div
         class="card-container retro2 ellipsis dark-bg-gary dark-white dark-border-color dark-shadow dark-hover"
