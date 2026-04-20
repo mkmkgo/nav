@@ -30,9 +30,7 @@ jobs:
         if: success()
         run: |
           npm install -g edgeone
-          # Deploy to EdgeOne Pages with overseas region
-          # The command will automatically create the project if it doesn't exist
-          edgeone pages deploy dist/browser -n nav-project -t ${{ secrets.EDGEONE_API_TOKEN }} --region global
+          # Deploy to EdgeOne Pages with overseas region (excluding mainland China)
+          edgeone pages deploy dist/browser -n nav-project -t ${{ secrets.EDGEONE_API_TOKEN }} -a overseas
         env:
           EDGEONE_API_TOKEN: ${{ secrets.EDGEONE_API_TOKEN }}
-          EDGEONE_REGION: global
