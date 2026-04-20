@@ -1,0 +1,25 @@
+{
+  "zoom": 1,
+  "components": [
+    {
+      "id": 1,
+      "type": "countdown",
+      "title": "距离2027年春节",
+      "date": "2027-01-29",
+      "topColor": "#e74c3c",
+      "bgColor": "#fff5f5",
+      "dayColor": "#e74c3c",
+      "dateColor": "#666666",
+      "url": ""
+    },
+    {
+      "id": 2,
+      "type": "news",
+      "title": "咨询",
+      "types": ["1", "2", "3"],
+      "topColor": "#3498db",
+      "bgColor": "#f0f8ff",
+      "url": ""
+    }
+  ]
+}
