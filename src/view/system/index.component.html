@@ -42,7 +42,6 @@
           nz-menu-item
           [nzSelected]="currentMenu === 'component'"
           (click)="goRoute('/system/component')"
-          *ngIf="isAuthz || isSelfDevelop"
         >
           {{ $t('_components') }}
         </li>
