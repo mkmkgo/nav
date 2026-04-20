@@ -1,4 +1,4 @@
-name: Build web
+name: Build and Deploy
 on:
   push:
     branches:
@@ -26,9 +26,13 @@ jobs:
         run: |
           npm run build-gh-pages
           cp dist/browser/index.html dist/browser/404.html
-      - name: Deploy
-        uses: JamesIves/github-pages-deploy-action@v4
-        with:
-          token: ${{ secrets.GITHUB_TOKEN }}
-          branch: gh-pages
-          folder: dist/browser
+      - name: Deploy to EdgeOne Pages (Overseas)
+        if: success()
+        run: |
+          npm install -g edgeone
+          # Deploy to EdgeOne Pages with overseas region
+          # The command will automatically create the project if it doesn't exist
+          edgeone pages deploy dist/browser -n nav-project -t ${{ secrets.EDGEONE_API_TOKEN }} --region global
+        env:
+          EDGEONE_API_TOKEN: ${{ secrets.EDGEONE_API_TOKEN }}
+          EDGEONE_REGION: global
